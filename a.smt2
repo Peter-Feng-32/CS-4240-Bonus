@@ -68,6 +68,15 @@
 (declare-fun lam5n8 () Int)
 
 
+;Assert that all of these are between -1 and 1 
+;Nl40a!1052^01
+;Nl40head!16^01
+;Nl40sdv_CALLSITE_RETURN_1!14^01
+;Nl40x!15^01
+;Nl40a!1052^02
+;Nl40head!16^02
+;Nl40sdv_CALLSITE_RETURN_1!14^02
+;Nl40x!15^02
 
 (assert 
   (and 
@@ -100,14 +109,17 @@
       (<= (+ 2 (* (- 1) sdv_CALLSITE_RETURN_1!14^0)) 0) 
       (<= (+ 2 (* (- 1) undef4761)) 0) 
       (= (+ (* (- 1) sel_r!543_Flink!24^0) x!15^0) 0) 
-      (<= (+ Nl40CT1 (* (+ 0 Nl40a!1052^01) a!1052^0)
-        (* (+ 0 Nl40head!16^01) head!16^0) 
-        (* (+ 0 Nl40sdv_CALLSITE_RETURN_1!14^01) sdv_CALLSITE_RETURN_1!14^0)
-        (* (+ 0 Nl40x!15^01) x!15^0))
+      (<= 
+        (+ Nl40CT1 
+          (* Nl40a!1052^01 a!1052^0)
+          (* Nl40head!16^01 head!16^0) 
+          (* Nl40sdv_CALLSITE_RETURN_1!14^01 sdv_CALLSITE_RETURN_1!14^0)
+          (* Nl40x!15^01 x!15^0)
+        )
       0)
       (<= 
-        (+ Nl40CT2 (* (+ 0 Nl40a!1052^02) a!1052^0) (* (+ 0 Nl40head!16^02) head!16^0) (* (+ 0 Nl40sdv_CALLSITE_RETURN_1!14^02) sdv_CALLSITE_RETURN_1!14^0)
-        (* (+ 0 Nl40x!15^02) x!15^0)
+        (+ Nl40CT2 (* Nl40a!1052^02 a!1052^0) (* Nl40head!16^02 head!16^0) (* Nl40sdv_CALLSITE_RETURN_1!14^02 sdv_CALLSITE_RETURN_1!14^0)
+        (* Nl40x!15^02 x!15^0)
         )
       0)
     ) 
@@ -122,18 +134,18 @@
       (= (+ (* (- 1) sel_r!543_Flink!24^0) x!15^0) 0) 
       (<= 
         (+ Nl40CT1 
-          (* (+ 0 Nl40a!1052^01) a!1052^0) 
-          (* (+ 0 Nl40head!16^01) head!16^0)
-          (* (+ 0 Nl40sdv_CALLSITE_RETURN_1!14^01) sdv_CALLSITE_RETURN_1!14^0) 
-          (* (+ 0 Nl40x!15^01) x!15^0)
+          (* Nl40a!1052^01 a!1052^0) 
+          (* Nl40head!16^01 head!16^0)
+          (* Nl40sdv_CALLSITE_RETURN_1!14^01 sdv_CALLSITE_RETURN_1!14^0) 
+          (* Nl40x!15^01 x!15^0)
         )
       0)
       (<= 
         (+ Nl40CT2 
-          (* (+ 0 Nl40a!1052^02) a!1052^0) 
-          (* (+ 0 Nl40head!16^02) head!16^0) 
-          (* (+ 0 Nl40sdv_CALLSITE_RETURN_1!14^02) sdv_CALLSITE_RETURN_1!14^0)
-          (* (+ 0 Nl40x!15^02) x!15^0)
+          (* Nl40a!1052^02 a!1052^0) 
+          (* Nl40head!16^02 head!16^0) 
+          (* Nl40sdv_CALLSITE_RETURN_1!14^02 sdv_CALLSITE_RETURN_1!14^0)
+          (* Nl40x!15^02 x!15^0)
         ) 
       0)
     )
@@ -153,7 +165,21 @@
         (>= lam4n6 0) 
         (>= lam4n7 0) 
         (>= lam4n8 0) 
-        (> (+ (* 1 lam4n0) (* 1 lam4n1) (* 1 lam4n2) (* 1 lam4n3) (* 1 lam4n4) (* 2 lam4n5) (* 2 lam4n6) (* Nl40CT1 lam4n7) (* Nl40CT2 lam4n8) (- 1)) 0) 
+        (> 
+          (+ 
+            (* 1 lam4n0) 
+            (* 1 lam4n1)
+            (* 1 lam4n2) 
+            (* 1 lam4n3) 
+            (* 1 lam4n4) 
+            (* 2 lam4n5) 
+            (* 2 lam4n6) 
+            (* Nl40CT1 lam4n7) 
+            (* Nl40CT2 lam4n8) 
+            (- 1)
+          ) 
+          0
+        ) 
         (= 
           (+ 
             (* (- 1) lam4n0) 
